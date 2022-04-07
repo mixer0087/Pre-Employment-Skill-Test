@@ -18,7 +18,7 @@ Open Facebook With Edge
     Element Should Be Visible    //input[@id="email"]
     Element Should Be Visible    //input[@id="pass"]
     Element Should Be Visible    //button[@name="login"]
-    Element Should Be Visible    //*[@id="u_0_g_LT"]/div[3]/a
+    Element Should Be Visible    //a[contains(text(),'Forgotten password?')]
 
 Login Facebook
     [Arguments]    ${email}    ${password}
@@ -28,5 +28,5 @@ Login Facebook
     Click Element    //button[@name="login"]
 
 Verify message after login
-    Element Should Be Visible    //div[@class="bcvklqu9 nzypyw8j"]/span
+    Wait Until Element Is Visible    //span[contains(text(),'Tester Cnx')]  15
     Sleep    3
